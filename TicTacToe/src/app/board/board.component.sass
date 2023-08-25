@@ -1,10 +1,28 @@
-.squares-wrapper
+
+
+.board
+  width: 565px
+  height: 500px
+  padding-right: 65px
+  box-sizing: border-box
+  background-image: url("./../../assets/board.svg")
+  background-repeat: no-repeat
+
+.square-wrapper
+  padding: 10px
+  box-sizing: border-box
+  width: 100%
+  height: 100%
   display: flex
-  width: 456px
-  height: 456px
   flex-wrap: wrap
 
-app-square
-  border: 1px solid pink
-  height: 150px
+.square
+  border: 0px 
+  margin: 1%
+  height: calc(94%/3)
+  width: calc(94%/3)
+
+.angular-logo
   width: 150px
+  height: 120px
+  background-image: url("./../../assets/angularLogo.svg")

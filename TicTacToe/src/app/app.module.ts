@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SquareComponent } from './square/square.component';
 import { BoardComponent } from './board/board.component';
+import { GirlComponent } from './girl/girl.component';
+import { BoyComponent } from './boy/boy.component';
+import { ButtonBarComponent } from './button-bar/button-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SquareComponent,
-    BoardComponent
+    BoardComponent,
+    GirlComponent,
+    BoyComponent,
+    ButtonBarComponent
   ],
   imports: [
     BrowserModule,

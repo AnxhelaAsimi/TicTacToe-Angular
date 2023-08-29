@@ -1,14 +1,18 @@
-<h1>Current Player: {{player}} </h1>
+<div class="game-wrapper">
+    <h1>Current Player: {{player}} </h1>
 
-
-<h2 *ngIf="winner">
-    Winner is: {{winner}}
-</h2>
-<div class="angular-logo">
-
-</div>
-<div class="board">
-    <div  class="square-wrapper">
-        <app-square class="square" *ngFor="let s of squares; let i = index" [value]="s" (click)="playerMove(i)"></app-square>
-    </div>    
-</div>
+    <h2 *ngIf="winner">
+        Winner is: {{winner}}
+    </h2>
+    <div class="board-wrapper">
+        <a href="https://angular.io/" target="_blank">
+            <div class="angular-logo">
+            </div>
+        </a>
+        <div class="board">
+            <div  class="square-wrapper">
+                <app-square class="square" *ngFor="let s of squares; let i = index" [value]="s" (click)="playerMove(i)"></app-square>
+            </div>    
+        </div>
+    </div>
+</div>    

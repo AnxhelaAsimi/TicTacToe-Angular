@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GirlComponent } from './girl.component';
+import { ConsoleComponent } from './console.component';
 
-describe('GirlComponent', () => {
-  let component: GirlComponent;
-  let fixture: ComponentFixture<GirlComponent>;
+describe('ConsoleComponent', () => {
+  let component: ConsoleComponent;
+  let fixture: ComponentFixture<ConsoleComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GirlComponent]
+      declarations: [ConsoleComponent]
     });
-    fixture = TestBed.createComponent(GirlComponent);
+    fixture = TestBed.createComponent(ConsoleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

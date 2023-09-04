@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SquareComponent } from './square/square.component';
 import { BoardComponent } from './board/board.component';
-import { GirlComponent } from './girl/girl.component';
+import { ConsoleComponent } from './console/console.component';
 import { BoyComponent } from './boy/boy.component';
 import { ButtonBarComponent } from './button-bar/button-bar.component';
 
@@ -14,7 +14,7 @@ import { ButtonBarComponent } from './button-bar/button-bar.component';
     AppComponent,
     SquareComponent,
     BoardComponent,
-    GirlComponent,
+    ConsoleComponent,
     BoyComponent,
     ButtonBarComponent
   ],

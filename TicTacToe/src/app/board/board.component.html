@@ -8,12 +8,13 @@
         <app-console></app-console>
     </div>
 
-    <div class="board-wrapper">
-        <a href="https://angular.io/" target="_blank">
-            <div class="angular-logo">
+    <div class="flex board-wrapper">
+        <div class="angular-logo">
+                <a href="https://angular.io/" target="_blank">
+                    <div class="flex"></div>
+                </a>
             </div>
-        </a>
-        <div style="display: flex; flex-direction: column;">        
+        <div class="flex" style="display: flex; flex-direction: column;">        
             <div class="board">
                 <div  class="square-wrapper">
                     <app-square class="square" *ngFor="let s of squares; let i = index" [value]="s" (click)="playerMove(i)"></app-square>

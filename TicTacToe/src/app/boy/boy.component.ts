@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class BoyComponent {
   @Input() playerNo: number | null;
-  @Input() playersTurn: 'X' | 'O' | null;
-  @Input() winner: 'X' | 'O' | null;
+  @Input() playersTurn: number | null;
+  @Input() winner:  number | null;
 
   constructor(){
     this.playerNo = null;

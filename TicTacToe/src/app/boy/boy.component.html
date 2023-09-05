@@ -1,2 +1,2 @@
-<div *ngIf="playerNo && playerNo==1" class="girl"></div>
-<div *ngIf="playerNo && playerNo==2" class="boy"></div>
+<div *ngIf="playerNo && playerNo==1" class="girl" [ngClass]="winner==1 ? 'girl-winning' : playersTurn === 1 ? 'girl-thinking' : 'girl-waiting'"></div>
+<div *ngIf="playerNo && playerNo==2" class="boy" [ngClass]="winner==2 ? 'boy-winning' : playersTurn === 2 ? 'boy-thinking' : 'boy-waiting'"></div>

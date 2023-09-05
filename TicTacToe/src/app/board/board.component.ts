@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class BoardComponent {
   squares: ("X"|"O"|null)[];
-  playerTurn: boolean;
-  winner: string | null;
+  playerTurn: number | null;
+  winner: number | null;
 
 
   constructor(){
     this.squares = [];
-    this.playerTurn = false;
-    this.winner = "";
+    this.playerTurn = 1;
+    this.winner = null;
   }
 
   ngOnInit(){
@@ -23,18 +23,18 @@ export class BoardComponent {
 
   newGame(){
     this.squares = Array(9).fill(null);
-    this.playerTurn = false;
-    this.winner = "";
+    this.playerTurn = 1;
+    this.winner = null;
   }
 
   get player(){
-   return this.playerTurn ?  'X' : 'O';
+   return this.playerTurn == 1 ? 'O' : 'X';
   }
 
   playerMove(id: number){
     if(!this.squares[id]){
       this.squares.splice(id,1,this.player);
-      this.playerTurn = !this.playerTurn;
+      this.playerTurn === 1 ? this.playerTurn = 2 : this.playerTurn = 1;
     }
     //find if we got a winner
     this.winner = this.calcWinner();
@@ -50,7 +50,9 @@ export class BoardComponent {
       const [a,b,c] = lines[i];
       if(this.squares[a] && this.squares[a]=== this.squares[b]
         && this.squares[a]===this.squares[c]){
-          return this.squares[a];
+          if(this.squares[a] == 'O')
+            return 1;
+          return 2;
         }
     }
     //no winner yet

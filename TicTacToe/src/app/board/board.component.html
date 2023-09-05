@@ -1,14 +1,14 @@
 
 <div class="game-wrapper">
-    <div class="console-wrapper">
+    <div class="console-wrapper" style="width: 40%;">
         <div class="players-wrapper">
-            <app-boy [playerNo]="1"></app-boy>
-            <app-boy [playerNo]="2"></app-boy>
+            <app-boy [playerNo]="1" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
+            <app-boy [playerNo]="2" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
         </div>    
         <app-console></app-console>
     </div>
 
-    <div class="flex board-wrapper">
+    <div class="board-wrapper" style="width: 60%;">
         <div class="angular-logo">
                 <a href="https://angular.io/" target="_blank">
                     <div class="flex"></div>
@@ -20,7 +20,7 @@
                     <app-square class="square" *ngFor="let s of squares; let i = index" [value]="s" (click)="playerMove(i)"></app-square>
                 </div>    
             </div>
-            <app-button-bar></app-button-bar>
+            <app-button-bar class="button-bar"></app-button-bar>
         </div>
     </div>
 </div>    

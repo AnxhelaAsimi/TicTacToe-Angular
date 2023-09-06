@@ -2,10 +2,10 @@
 <div class="game-wrapper">
     <div class="console-wrapper" style="width: 40%;">
         <div class="players-wrapper">
-            <app-boy [playerNo]="1" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
-            <app-boy [playerNo]="2" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
+            <app-boy class="girl" [playerNo]="1" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
+            <app-boy class="boy" [playerNo]="2" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
         </div>    
-        <app-console></app-console>
+        <app-console class="console"></app-console>
     </div>
 
     <div class="board-wrapper" style="width: 60%;">

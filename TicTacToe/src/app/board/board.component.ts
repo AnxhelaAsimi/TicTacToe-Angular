@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-board',
@@ -6,6 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./board.component.sass']
 })
 export class BoardComponent {
+  @ViewChild('resizeGame') resizeGame: ElementRef | null = null;
+
+  @HostListener('window:resize')
+  @HostListener('window:load')
+  onResize(): void {
+    if(this.resizeGame) {
+      if(window.innerHeight>  window.innerWidth / 2.27){
+        this.resizeGame.nativeElement.style.width = window.innerWidth + 'px';
+        this.resizeGame.nativeElement.style.height = window.innerWidth / 2.27 + 'px';
+      }else{
+        this.resizeGame.nativeElement.style.width = window.innerHeight *  2.27 + 'px';
+        this.resizeGame.nativeElement.style.height = window.innerHeight  + 'px';
+      }
+    }
+  }
+  
   squares: ("X"|"O"|null)[];
   playerTurn: number | null;
   winner: number | null;
@@ -19,6 +35,7 @@ export class BoardComponent {
 
   ngOnInit(){
     this.newGame();
+    this.onResize();
   }
 
   newGame(){
@@ -32,12 +49,14 @@ export class BoardComponent {
   }
 
   playerMove(id: number){
-    if(!this.squares[id]){
-      this.squares.splice(id,1,this.player);
-      this.playerTurn === 1 ? this.playerTurn = 2 : this.playerTurn = 1;
+    if(!this.winner){
+      if(!this.squares[id]){
+        this.squares.splice(id,1,this.player);
+        this.playerTurn === 1 ? this.playerTurn = 2 : this.playerTurn = 1;
+      }
+      //find if we got a winner
+      this.winner = this.calcWinner();
     }
-    //find if we got a winner
-    this.winner = this.calcWinner();
   }
 
   calcWinner(){

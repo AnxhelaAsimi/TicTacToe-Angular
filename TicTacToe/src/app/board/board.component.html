@@ -1,5 +1,5 @@
 
-<div class="game-wrapper">
+<div #resizeGame class="game-wrapper">
     <div class="console-wrapper" style="width: 40%;">
         <div class="players-wrapper">
             <app-boy class="girl" [playerNo]="1" [playersTurn]="playerTurn" [winner]="winner"></app-boy>
@@ -20,7 +20,8 @@
                     <app-square class="square" *ngFor="let s of squares; let i = index" [value]="s" (click)="playerMove(i)"></app-square>
                 </div>    
             </div>
-            <app-button-bar class="button-bar"></app-button-bar>
+            <app-button-bar class="button-bar" [winner] = "winner"></app-button-bar>
+            <div *ngIf="winner && winner > 0" class="play-again-button" (click)="newGame()"></div>
         </div>
     </div>
 </div>    

@@ -11,13 +11,13 @@ export class BoardComponent {
   @HostListener('window:resize')
   @HostListener('window:load')
   onResize(): void {
-    if(this.resizeGame) {
-      if(window.innerHeight>  window.innerWidth / 2.27){
-        this.resizeGame.nativeElement.style.width = window.innerWidth + 'px';
-        this.resizeGame.nativeElement.style.height = window.innerWidth / 2.27 + 'px';
+    if(this.resizeGame && window.visualViewport) {
+      if(window.visualViewport.height >  window.visualViewport.width / 2.2725){
+        this.resizeGame.nativeElement.style.width = window.visualViewport.width + 'px';
+        this.resizeGame.nativeElement.style.height = window.visualViewport.width / 2.2725 + 'px';
       }else{
-        this.resizeGame.nativeElement.style.width = window.innerHeight *  2.27 + 'px';
-        this.resizeGame.nativeElement.style.height = window.innerHeight  + 'px';
+        this.resizeGame.nativeElement.style.width = window.visualViewport.height *  2.2725 + 'px';
+        this.resizeGame.nativeElement.style.height = window.visualViewport.height  + 'px';
       }
     }
   }

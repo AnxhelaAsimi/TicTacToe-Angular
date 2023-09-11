@@ -1,9 +1,9 @@
 <div *ngIf="playerNo && playerNo==1 && winner==1" class="player girl-winning "></div>
-<div *ngIf="playerNo && playerNo==1 && winner==2" class="player girl-losing "></div>
+<div *ngIf="playerNo && playerNo==1 && (winner==2 || winner==3)" class="player girl-losing "></div>
 <div *ngIf="playerNo && playerNo==1 && playersTurn === 1 && !winner" class="player girl-thinking "></div>
 <div *ngIf="playerNo && playerNo==1 && playersTurn === 2 && !winner" class="player girl-waiting "></div>
 
 <div *ngIf="playerNo && playerNo==2 && winner==2" class="player boy-winning "></div>
-<div *ngIf="playerNo && playerNo==2 && winner==1" class="player boy-losing"></div>
+<div *ngIf="playerNo && playerNo==2 && (winner==1 || winner==3)" class="player boy-losing"></div>
 <div *ngIf="playerNo && playerNo==2 && playersTurn === 2 && !winner" class="player boy-thinking"></div>
 <div *ngIf="playerNo && playerNo==2 && playersTurn === 1 && !winner" class="player boy-waiting "></div>

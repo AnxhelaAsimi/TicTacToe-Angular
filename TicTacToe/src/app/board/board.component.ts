@@ -74,6 +74,14 @@ export class BoardComponent {
           return 2;
         }
     }
+
+    let gameOver=true;
+    for(let i =0; i< this.squares.length; i++){
+      if(this.squares[i]===null)
+        gameOver = false;
+    }
+    if(gameOver)
+      return 3;
     //no winner yet
     return null;
   }
